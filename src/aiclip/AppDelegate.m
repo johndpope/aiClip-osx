@@ -12,6 +12,17 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
+    NSStatusBar *bar = [ NSStatusBar systemStatusBar ];
+    {
+        // create item by statusbar
+        NSStatusItem *item = [bar statusItemWithLength:NSVariableStatusItemLength];
+        
+        item.title = @"Test";
+        item.toolTip = @"Hello";
+        item.highlightMode = YES;
+        
+        [item setMenu:self.ClipMenu];
+    }
     // Insert code here to initialize your application
 }
 
